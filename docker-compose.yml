@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      secrets:
+        - git_username
+        - git_access_token
+    container_name: test
+
+secrets:
+  git_username:
+    file: git_username.txt
+  git_access_token:
+    file: git_access_token.txt
